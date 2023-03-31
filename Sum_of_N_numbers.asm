@@ -1,0 +1,18 @@
+ORG 0000H
+MOV A, 60H
+MOV R1, #00H
+MOV R0, #01H
+L1:
+    SUBB A, R0
+    JC L2
+    INC R0
+    INC R0
+    INC R1
+    JNZ L1
+    MOV A, R1
+    SJMP L3
+L2:
+    MOV A, #0FFH
+L3:
+    MOV 70H, A
+END
